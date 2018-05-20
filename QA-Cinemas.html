@@ -32,7 +32,6 @@
 	input[type=number] {
 		width: 50px;
 	}
-	
 
 	/* unvisited link */
 	a:link {
@@ -142,9 +141,8 @@ document.getElementById("sPrice").innerHTML = "£" + sPrice;
 document.getElementById("oPrice").innerHTML = "£" + oPrice;
 
 function sale() {
-		;
-
-		if ( document.getElementById('out5').value == 0 || isNaN(document.getElementById('out5').value)) {
+		if(isNaN(document.getElementById('out5').value)) {}
+		else if ( document.getElementById('out5').value == 0){
 			alert("Sale has NOT been made");
 		}
 		else{
@@ -180,7 +178,4 @@ function sale() {
 }
 
 </script>
-
-
-
 </html>
