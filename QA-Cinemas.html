@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<style>
+	spinner {
+		value: 0;
+		width: 0.1;
+	}
+
+	table {
+    		border-collapse: collapse;
+    		border: 1px solid black;
+	}
+	</style>	
+
+</head>
+
+
+<header> <title> QA Cinemas</title></header>
+	
+<h1>QA Cinemas</h1>
+
+<body>
+	Tickets to see Two Brothers
+		<form action="/action_page.php" target="_blank" method="post">
+			<table>
+				<tr>
+					<th>People</th>
+					<th>Price</th>
+					<th>Number</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+  				<td>Adults:</td>   
+					<td>£4</td>
+					<td><input type="number" name="adult" value=0 class=spinner></td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Children:</td>
+					<td>£4</td>
+					<td><input type="number" name="child" value="0"></td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>Students</td>
+					<td>£4</td>
+					<td><input type="number" name="student" value="0"></td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td>OAPs:</td>
+					<td>£4</td>    
+					<td><input type="number" name="oap" value="0"></td>
+					<td> </td>
+				</tr>
+				<tr>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td>x</td>
+				</tr>
+			</table>
+  			<input type="submit" value="Submit">
+		</form>
+</body>
+
+
+
+
+
+<?php
+echo "My first PHP script!";
+?>
+
+</html>
