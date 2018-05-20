@@ -20,14 +20,20 @@
 </head>
 
 
-
 <header> <title> QA Cinemas</title></header>
 	
 <h1>QA Cinemas</h1>
 
 <body>
 	Tickets to see Two Brothers
-		<form action="/action_page.php" target="_blank" method="post">
+		<form action="/action_page.php" target="_blank" method="post"
+		oninput="aOut.value=parseInt(aIn.value)*aPrice;
+							cOut.value=parseInt(cIn.value)*cPrice;
+							sOut.value=parseInt(sIn.value)*sPrice;
+							oOut.value=parseInt(oIn.value)*oPrice;
+							tOut.value=parseInt(aIn.value)*aPrice+parseInt(cIn.value)*cPrice+
+													parseInt(sIn.value)*sPrice+parseInt(oIn.value)*oPrice">
+
 			<table>
 				<tr>
 					<th>People</th>
@@ -38,40 +44,40 @@
 				<tr>
   				<td>Adults:</td>   
 					<td id="aPrice"></td>
-					<td><input type="number" name="adult" value=0></td>
-					<td> </td>
+					<form>
+					<td><center><input type="number" name = "adult" id="aIn" value=0 min=0></center></td>
+					<td> £<output id="out1" name="aOut" for="aIn" value=0>0</output></td>
 				</tr>
 				<tr>
 					<td>Children:</td>
 					<td id="cPrice"></td>
-					<td><input type="number" name="child" value=0></td>
-					<td> </td>
+					<td><center><input type="number" name="child" id="cIn" value=0 min=0></center></td>
+					<td> £<output id="out2" name="cOut" for="cIn" value=0>0</output></td>
 				</tr>
 				<tr>
 					<td>Students:</td>
 					<td id="sPrice"></td>
-					<td><input type="number" name="student" value=0></td>
-					<td> </td>
+					<td><center><input type="number" name="student" id="sIn" value=0 min=0></center></td>
+					<td> £<output id="out3" name="sOut" for="sIn" value=0>0</output></td>
 				</tr>
 				<tr>
 					<td>OAPs:</td>
 					<td id="oPrice"></td>    
-					<td><input type="number" name="oap" value=0></td>
-					<td> </td>
+					<td><center><input type="number" name="oap" id="oIn" value=0 min=0></center></td>
+					<td> £<output id="out4" name="oOut" for="oIn" value=0>0</output></td>
 				</tr>
 				<tr>
 					<td> </td>
 					<td> </td>
 					<td> </td>
-					<td>x</td>
+					<td> £<output id="out5" name="tOut" for="aIn cIn sIn oIn" value=0>0</output></td>
 				</tr>
 			</table>
   			<input type="submit" value="Submit">
 		</form>
 </body>
 
-
-
+<output for="adult">
 
 
 <script>
@@ -83,6 +89,7 @@ document.getElementById("aPrice").innerHTML = "£" + aPrice;
 document.getElementById("cPrice").innerHTML = "£" + cPrice;
 document.getElementById("sPrice").innerHTML = "£" + sPrice;
 document.getElementById("oPrice").innerHTML = "£" + oPrice;
+document.getElementById("aPriceTot").innerHTML = "£" + aPrice*document.getElementById("adult").value;
 </script>
 
 
