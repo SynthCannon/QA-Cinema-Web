@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<style>
-	spinner {
+	input[type=number] {
 		value: 0;
-		width: 0.1;
+		width: 50px;
 	}
 
-	table {
+	table,th {
     		border-collapse: collapse;
+				padding: 6px;
     		border: 1px solid black;
 	}
 	</style>	
 
 </head>
+
 
 
 <header> <title> QA Cinemas</title></header>
@@ -35,26 +37,26 @@
 				</tr>
 				<tr>
   				<td>Adults:</td>   
-					<td>£4</td>
-					<td><input type="number" name="adult" value=0 class=spinner></td>
+					<td id="aPrice"></td>
+					<td><input type="number" name="adult" value=0></td>
 					<td> </td>
 				</tr>
 				<tr>
 					<td>Children:</td>
-					<td>£4</td>
-					<td><input type="number" name="child" value="0"></td>
+					<td id="cPrice"></td>
+					<td><input type="number" name="child" value=0></td>
 					<td> </td>
 				</tr>
 				<tr>
-					<td>Students</td>
-					<td>£4</td>
-					<td><input type="number" name="student" value="0"></td>
+					<td>Students:</td>
+					<td id="sPrice"></td>
+					<td><input type="number" name="student" value=0></td>
 					<td> </td>
 				</tr>
 				<tr>
 					<td>OAPs:</td>
-					<td>£4</td>    
-					<td><input type="number" name="oap" value="0"></td>
+					<td id="oPrice"></td>    
+					<td><input type="number" name="oap" value=0></td>
 					<td> </td>
 				</tr>
 				<tr>
@@ -70,6 +72,18 @@
 
 
 
+
+
+<script>
+var aPrice = 8;
+var cPrice = 4;
+var sPrice = 6;
+var oPrice = 6;
+document.getElementById("aPrice").innerHTML = "£" + aPrice;
+document.getElementById("cPrice").innerHTML = "£" + cPrice;
+document.getElementById("sPrice").innerHTML = "£" + sPrice;
+document.getElementById("oPrice").innerHTML = "£" + oPrice;
+</script>
 
 
 <?php
