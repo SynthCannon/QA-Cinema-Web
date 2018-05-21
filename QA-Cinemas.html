@@ -55,7 +55,6 @@
 	}
 
 	</style>	
-
 </head>
 
 
@@ -113,6 +112,7 @@
 		</table>
 		
 		<button onclick="sale()">Make Sale</button>
+
 	</form>
 </body>
 
@@ -127,7 +127,7 @@ switch(day){
 		var discount = 2;
 		break;
 	default:
-		var discount=0;
+		var discount = 0;
 }
 
 var aPrice = 8-discount;
@@ -141,35 +141,46 @@ document.getElementById("sPrice").innerHTML = "£" + sPrice;
 document.getElementById("oPrice").innerHTML = "£" + oPrice;
 
 function sale() {
+		var adults = document.getElementById('aIn').value;
+		var children = document.getElementById('cIn').value;
+		var students = document.getElementById('sIn').value;
+		var oaps = document.getElementById('oIn').value;
+
 		if(isNaN(document.getElementById('out5').value)) {}
 		else if ( document.getElementById('out5').value == 0){
 			alert("Sale has NOT been made");
 		}
+		else if (adults ==null || children == null || students == null || oaps == null){
+			alert("Careful of empty fields");
+		}
+		else if (adults <0 || children <0 || students <0 || oaps <0){
+			alert("We don't take kindly to negative Nancy's round here");
+		}
 		else{
 			var outString = "";
-			if (document.getElementById('aIn').value == 1){
+			if (adults == 1){
 				outString += "1x adults\n";
 			}
-			else if (document.getElementById('aIn').value > 1){
-				outString += document.getElementById('aIn').value + "x adults\n";
+			else if (adults > 1){
+				outString += adults + "x adults\n";
 			}
-			if (document.getElementById('cIn').value == 1){
+			if (children == 1){
 				outString += "1x child\n";
 			}
-			else if (document.getElementById('cIn').value > 1){
-				outString += document.getElementById('cIn').value + "x children\n";
+			else if (children > 1){
+				outString += children + "x children\n";
 			}
-			if (document.getElementById('sIn').value == 1){
+			if (students == 1){
 				outString += "1x student\n";
 			}
-			else if (document.getElementById('sIn').value > 1){
-				outString += document.getElementById('sIn').value + "x students\n";
+			else if (students > 1){
+				outString += students + "x students\n";
 			}
-			if (document.getElementById('oIn').value == 1){
+			if (oaps == 1){
 				outString += "1x OAP\n";
 			}
-			else if (document.getElementById('oIn').value > 1){
-				outString += document.getElementById('oIn').value + "x OAPs\n";
+			else if (oaps > 1){
+				outString += oaps + "x OAPs\n";
 			}
 
 			outString = outString.substring(0, outString.length - 1);
